@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
     public static int score = 0;
     public static int tall = 0;
     public static int low = 0;
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
         Intent intent = getIntent();
         opponentScore = intent.getIntExtra("opponentScore", score);
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeTeam(View view) {
-        Intent intent = new Intent(this, MainActivity2.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("opponentScore", score);
         startActivity(intent);
     }
@@ -166,4 +166,5 @@ public class MainActivity extends AppCompatActivity {
             ((TextView) findViewById(R.id.scoreDiff)).setText(Integer.toString(Math.abs(diff)));
         }
     }
+
 }
